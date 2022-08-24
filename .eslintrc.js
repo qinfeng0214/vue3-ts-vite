@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 16:22:48
  * @LastEditors: yft
- * @LastEditTime: 2022-08-24 16:39:31
+ * @LastEditTime: 2022-08-24 18:04:12
  */
 module.exports = {
 	root: true,
@@ -49,6 +49,7 @@ module.exports = {
 				varsIgnorePattern: '^h$'
 			}
 		],
+		'vue/multi-word-component-names': 0,
 		'no-unused-vars': [
 			'error',
 			{
