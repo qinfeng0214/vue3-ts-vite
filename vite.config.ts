@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 15:42:39
  * @LastEditors: yft
- * @LastEditTime: 2022-08-29 17:21:08
+ * @LastEditTime: 2022-08-29 17:44:15
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -57,7 +57,10 @@ export default defineConfig({
 				'pinia',
 				{
 					'@vueuse/core': [
-						'useMouse' // import { useMouse } from '@vueuse/core',
+						// import { useDebounceFn } from '@vueuse/core',
+						'useDebounceFn',
+						'useThrottleFn',
+						'useTimeoutPoll'
 						// 设置别名
 						// ['useFetch', 'useMyFetch'] // import { useFetch as useMyFetch } from '@vueuse/core',
 					],
