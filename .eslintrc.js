@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 16:22:48
  * @LastEditors: yft
- * @LastEditTime: 2022-08-24 18:04:12
+ * @LastEditTime: 2022-08-25 16:25:38
  */
 module.exports = {
 	root: true,
@@ -26,7 +26,8 @@ module.exports = {
 		'plugin:vue/vue3-recommended',
 		'plugin:@typescript-eslint/recommended',
 		'prettier',
-		'plugin:prettier/recommended'
+		'plugin:prettier/recommended',
+		'./.eslintrc-auto-import.json'
 	],
 
 	rules: {

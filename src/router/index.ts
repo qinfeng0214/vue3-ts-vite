@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 15:50:05
  * @LastEditors: yft
- * @LastEditTime: 2022-08-24 16:28:47
+ * @LastEditTime: 2022-08-25 15:57:07
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
@@ -14,9 +14,9 @@ const routes: Array<RouteRecordRaw> = [
 		meta: {
 			title: '登录',
 			keepAlive: true,
-			requireAuth: false,
+			requireAuth: false
 		},
-		component: () => import('@/pages/user/login.vue'),
+		component: () => import('@/pages/user/login.vue')
 	},
 	{
 		path: '/',
@@ -24,14 +24,14 @@ const routes: Array<RouteRecordRaw> = [
 		meta: {
 			title: '首页',
 			keepAlive: true,
-			requireAuth: true,
+			requireAuth: true
 		},
-		component: () => import('@/pages/index.vue'),
-	},
+		component: () => import('@/pages/index.vue')
+	}
 ]
 
 const router = createRouter({
 	history: createWebHistory(),
-	routes,
+	routes
 })
 export default router
