@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-09-05 14:56:13
  * @LastEditors: yft
- * @LastEditTime: 2022-09-05 15:28:20
+ * @LastEditTime: 2022-09-05 15:40:50
 -->
 <template>
 	<div>{{ data?.content }}</div>
@@ -15,5 +15,4 @@
 		return useRequest(getLoveApi, data)
 	}
 	const { data, run, runParams, loading }: any = getLoveResult('json')
-	console.log(data, run, runParams, loading)
 </script>
