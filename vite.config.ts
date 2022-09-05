@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 15:42:39
  * @LastEditors: yft
- * @LastEditTime: 2022-08-29 17:44:15
+ * @LastEditTime: 2022-09-05 15:22:21
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -87,9 +87,9 @@ export default defineConfig({
 		// 设置 https 代理
 		proxy: {
 			'/api': {
-				target: 'your https address',
+				target: 'https://api.uomg.com/',
 				changeOrigin: true,
-				rewrite: (path: string) => path.replace(/^\/api/, '')
+				rewrite: (path: string) => path.replace(/^\/api/, '/api')
 			}
 		}
 	}

@@ -3,11 +3,11 @@
  * @Author: yft
  * @Date: 2022-08-29 17:27:41
  * @LastEditors: yft
- * @LastEditTime: 2022-08-29 17:44:23
+ * @LastEditTime: 2022-09-05 14:43:37
  */
-import type { IUseRequestOption, IUseRequestRequest } from '@/types/useRequest'
+import type { IUseRequestOption, IUseRequestRequest } from '../type/index'
 // 引入返回值类型
-import type { IResponse } from '@/utils/request/request'
+import type { IResponse } from '@/utils/request/src/request'
 const defaultOption: IUseRequestOption = {
 	// 是否开启防抖 时长
 	debounce: false,
@@ -40,7 +40,7 @@ const useRequest = <
 	// 警告
 	if (option.throttle && option.debounce) {
 		console.warn(
-			'[ywz warn]: useRequest的配置项中的throttle和debounce均为true，请选择一个，否则这样默认使用防抖'
+			'[warn]: useRequest的配置项中的throttle和debounce均为true，请选择一个，否则这样默认使用防抖'
 		)
 	}
 

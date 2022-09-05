@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-24 15:50:05
  * @LastEditors: yft
- * @LastEditTime: 2022-08-25 15:57:07
+ * @LastEditTime: 2022-09-05 15:16:20
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
@@ -27,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
 			requireAuth: true
 		},
 		component: () => import('@/pages/index.vue')
+	},
+	{
+		path: '/qinghua',
+		name: 'qinghua',
+		component: () => import('@/pages/test/index.vue')
 	}
 ]
 

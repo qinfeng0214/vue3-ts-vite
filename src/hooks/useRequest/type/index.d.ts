@@ -3,7 +3,7 @@
  * @Author: yft
  * @Date: 2022-08-29 17:29:28
  * @LastEditors: yft
- * @LastEditTime: 2022-08-29 17:29:50
+ * @LastEditTime: 2022-09-05 14:43:16
  */
 import type { Ref } from 'vue'
 export interface IUseRequestOption<T = any> {
@@ -27,7 +27,7 @@ export interface IUseRequestRequest<D, T> {
 	run: (...args: any[]) => Promise<void>
 	runParams: (params: D) => Promise<void>
 }
-export interface IWhyRequest<T> {
+export interface IRequest<T> {
 	code: number
 	data: T
 }
