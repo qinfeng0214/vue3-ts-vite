@@ -3,13 +3,10 @@
  * @Author: yft
  * @Date: 2022-08-24 17:48:46
  * @LastEditors: yft
- * @LastEditTime: 2022-08-25 16:50:46
+ * @LastEditTime: 2022-11-02 15:17:03
 -->
 <template>
-	<div>
-		<a-input></a-input>
-		<a-button type="primary">登录</a-button>
-	</div>
+	<div>登录</div>
 </template>
 
 <script lang="ts" setup>

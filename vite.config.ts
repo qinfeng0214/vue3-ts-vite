@@ -3,14 +3,15 @@
  * @Author: yft
  * @Date: 2022-08-24 15:42:39
  * @LastEditors: yft
- * @LastEditTime: 2022-09-05 15:22:21
+ * @LastEditTime: 2022-11-15 16:52:49
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
+import ElementPlus from 'unplugin-element-plus/vite' // 不加这个配置，ElMessage出不来
 
 export default defineConfig({
 	resolve: {
@@ -23,17 +24,20 @@ export default defineConfig({
 		vue(),
 		Components({
 			// // 用于搜索组件的目录的相对路径
-			dirs: ['src/components'],
+			dirs: ['src/components', 'src/layout'],
 			// 搜索子目录
 			deep: true,
 			// 组件的有效文件扩展名。
 			extensions: ['vue'],
 			// 配置文件生成位置
-			dts: false, //  'src/types/components.d.ts'
+			// dts: false,
+			dts: 'src/types/components.d.ts',
 			// ui库解析器
 			resolvers: [
-				AntDesignVueResolver() // ant-design-vue
-				// ElementPlusResolver(), // Element Plus
+				// AntDesignVueResolver() // ant-design-vue
+				ElementPlusResolver({
+					importStyle: 'sass'
+				}) // Element Plus
 				// VantResolver(), // Vant
 			],
 			include: [/\.vue$/, /\.vue\?vue/],
@@ -44,7 +48,11 @@ export default defineConfig({
 				/[\\/]\public[\\/]/
 			]
 		}),
+
+		ElementPlus(), // 用于内部方法调用，样式缺失的现象，如 ElMessage 等
+
 		AutoImport({
+			resolvers: [ElementPlusResolver()],
 			include: [
 				/\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
 				/\.vue$/,
@@ -68,7 +76,8 @@ export default defineConfig({
 				}
 			],
 			// 配置文件生成位置
-			dts: false, //	 'src/types/auto-import.d.ts'
+			// dts: false,
+			dts: 'src/types/auto-import.d.ts',
 			eslintrc: {
 				// 新增依赖需设置enabled:true,重新生成json文件
 				enabled: true, // Default `false`
@@ -90,6 +99,14 @@ export default defineConfig({
 				target: 'https://api.uomg.com/',
 				changeOrigin: true,
 				rewrite: (path: string) => path.replace(/^\/api/, '/api')
+			}
+		}
+	},
+	css: {
+		preprocessorOptions: {
+			// 覆盖掉element-plus包中的主题变量文件
+			scss: {
+				additionalData: '@use "@/styles/element/index.scss" as *;'
 			}
 		}
 	}

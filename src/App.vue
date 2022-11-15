@@ -3,12 +3,18 @@
  * @Author: yft
  * @Date: 2022-08-24 15:42:39
  * @LastEditors: yft
- * @LastEditTime: 2022-08-24 16:03:21
+ * @LastEditTime: 2022-11-02 16:10:51
 -->
 <script setup lang="ts"></script>
 
 <template>
-	<RouterView />
+	<Layout></Layout>
 </template>
 
-<style scoped></style>
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+</style>
